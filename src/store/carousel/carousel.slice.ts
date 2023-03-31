@@ -1,10 +1,10 @@
-import {createSlice} from "@reduxjs/toolkit"
-import {ICarousel} from "@/store/carousel/carousel.interface"
-import {items} from "@/store/carousel/items.data"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ICarousel } from '@/store/carousel/carousel.interface'
+import { items } from '@/store/carousel/items.data'
 
 const initialState: ICarousel = {
     currentId: 1,
-    items
+    items,
 }
 
 export const carouselSlice = createSlice({
@@ -26,6 +26,9 @@ export const carouselSlice = createSlice({
             if (!prevItem) return
 
             state.currentId = prevId
-        }
-    }
+        },
+        changeCurrentId: (state, action: PayloadAction<number>) => {
+            state.currentId = action.payload
+        },
+    },
 })

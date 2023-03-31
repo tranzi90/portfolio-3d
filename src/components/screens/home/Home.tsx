@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { useCarousel } from '@/components/screens/home/carousel/useCarousel'
 import Carousel from '@/components/screens/home/carousel/Carousel'
 
 const Home: FC = () => {
